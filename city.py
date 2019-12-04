@@ -180,7 +180,7 @@ def ending_game(player):
         else:
             print(moving.end_game(player))
     if player.life == 0:
-        return None
+        print(gascii.you_died())
     elif opponent_life <= 0:
         prize = dice.roll_dice() * 666
         player.money += prize

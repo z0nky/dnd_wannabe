@@ -62,12 +62,13 @@ def start_game():
     location = start_location.starting_path(player)
     if location == "city":
         print(f"{player.name} will go to the city.")
-        while player.life > 0:
+        if player.life > 0:
             city.enter_the_city(player)
             if player.quest == 666:
                 print("")
                 exit_the_program()
-        commands.game_over(player)
+        else:
+            commands.game_over(player)
     elif location == "river":
         print(f"{player.name} will go to the river.")
         river.river_arrival(player)

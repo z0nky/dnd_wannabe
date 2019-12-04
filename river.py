@@ -7,6 +7,8 @@ import commands
 
 def cave_wolf_encounter(player):
     opponent_life = 5
+    print(gascii.wolf_view())
+    input("Just press anything to start fight (and confirm with ENTER).")
     while player.life > 0 and opponent_life > 0:
         if moving.encounter(player) == "Player win":
             opponent_life -= player.weapon
@@ -18,10 +20,11 @@ def cave_wolf_encounter(player):
         else:
             print(moving.encounter(player))
     if player.life == 0:
-        print("Oh no, you are dead! X_X")
+        print(gascii.you_died())
     elif opponent_life <= 0:
         prize = dice.roll_dice() * 11
         player.money += prize
+        print(gascii.moneyz())
         print(f"{player.name} has killed wolf and found {prize} gold coins. "
               f"Now {player.name} has {player.money} gold coins and {player.life}/100 hit points left.")
         print(f"{player.name} feeling strong walks back towards river bank.")
@@ -30,6 +33,7 @@ def cave_wolf_encounter(player):
 
 def river_troll_fight1(player):
     opponent_life = 10
+    input("Just press anything to start fight (and confirm with ENTER).")
     while player.life > 0 and opponent_life > 0:
         if moving.encounter_disadvantage(player) == "Player win":
             opponent_life -= player.weapon
@@ -41,10 +45,11 @@ def river_troll_fight1(player):
         else:
             print(moving.encounter_disadvantage(player))
     if player.life == 0:
-        print("Oh no, you are dead! X_X")
+        print(gascii.you_died())
     elif opponent_life <= 0:
         prize = dice.roll_dice() * 20
         player.money += prize
+        print(gascii.moneyz())
         print(f"{player.name} has killed troll and found {prize} gold coins. "
               f"Now {player.name} has {player.money} gold coins and {player.life}/100 hit points left.")
         print(f"{player.name} feeling strong walks back towards river bank.")
@@ -55,6 +60,7 @@ def river_troll_fight1(player):
 
 def river_troll_fight2(player):
     opponent_life = 10
+    input("Just press anything to start fight (and confirm with ENTER).")
     while player.life > 0 and opponent_life > 0:
         if moving.encounter(player) == "Player win":
             opponent_life -= player.weapon
@@ -66,10 +72,11 @@ def river_troll_fight2(player):
         else:
             print(moving.encounter(player))
     if player.life == 0:
-        print("Oh no, you are dead! X_X")
+        print(gascii.you_died())
     elif opponent_life <= 0:
         prize = dice.roll_dice() * 20
         player.money += prize
+        print(gascii.moneyz())
         print(f"{player.name} has killed troll and found {prize} gold coins. "
               f"Now {player.name} has {player.money} gold coins and {player.life}/100 hit points left.")
         print(f"{player.name} feeling strong walks back towards river bank.")
@@ -80,6 +87,7 @@ def river_troll_fight2(player):
 
 
 def river_cave_02(player):
+    print(gascii.troll_view())
     print("Deeper in the cave you can see bulky figure of troll.")
     print("Indeed as the scribe said it isn't too big.")
     decision = input(f"{player.name} do you want to attack troll? You have {player.life} hit points. (attack/flee) ")
@@ -89,7 +97,7 @@ def river_cave_02(player):
     elif decision == "attack":
         if player.life <= 50:
             player.life = 70
-            print(f"{player.name} focusing your powers you heal yourself. It's some kind of magic, maagic, maaaagic!")
+            print(f"{player.name} focusing your powers you heal yourself. It's some kind of magic, maagic, maaaagic...!")
         player.weapon += 1
         print(f"{player.name} decides to attack. {player.name} notices ring of power boosting his attack to {player.weapon}"
               f"With {player.life}/100 hit points you charge at the troll!")
@@ -131,6 +139,7 @@ def river_direction(player):
             river_direction(player)
     elif decision == "east":
         print("On the small green grassland. You see small birds called Scavengers running around.")
+        print(gascii.scav_view())
         encounter_choice = input(f"{player.name} do you want to attack scavenger? Remember you have {player.life} hit points, "
                                  f"{player.weapon} attack points. (attack/back) ")
         if encounter_choice == "attack":
@@ -147,7 +156,7 @@ def river_direction(player):
                 else:
                     print(moving.encounter(player))
             if player.life == 0:
-                print("Oh no, you are dead! X_X")
+                print(gascii.you_died())
             elif opponent_life <= 0:
                 prize = dice.roll_dice() * 10
                 player.money += prize
