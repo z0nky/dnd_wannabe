@@ -2,6 +2,8 @@ import character
 import start_location
 import moving
 import city
+import commands
+import gascii
 
 
 class Player:
@@ -17,29 +19,38 @@ class Player:
 
 
 def main_menu():
-    return ('New Game - 1'
+    print(gascii.asc_mainmenu().center(50))
+    return ('\nNew Game - 1'
             '\nContinue Last Game - 2'
             '\nExit - 3')
 
 
 def main():
-    print(('MAIN MENU').center(20, "*"))
     print(main_menu())
     go_to = input('Insert menu number positon (1-3): ')
     if go_to == '1':
         start_game()
     elif go_to == '2':
-        print("This feature is unavailable. Please pay 100€ for incoming DLC so I will input if asap!")
+        print("This feature will be added in paid DLC.")
         main()
     elif go_to == '3':
         exit_the_program()
     else:
-        print('Please enter number from range 1-3.')
+        commands.typo()
         main()
 
 
 def exit_the_program():
-    print('*' * 5, '\nThanks for playing, come again soon!')
+    print(gascii.exit())
+    decide = input("Yes or no? ").lower()
+    if decide == "yes" or decide == "y":
+        print('*' * 5, '\nThanks for playing, come again soon!')
+    elif decide == "no" or decide == "n":
+        print("Oh I'm glad you are staying after all!")
+        main()
+    else:
+        commands.typo()
+        exit_the_program()
 
 
 def start_game():
