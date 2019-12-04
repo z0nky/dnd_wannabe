@@ -61,3 +61,4 @@ Also author does not care you can not win the game.
     - [ ] Rebuild opponents into classes and rewrite encounters to simplify the code *currently in progress*
     - [x] Add command handler to simplify code
     - [x] Add ASCII graphics
+    - [ ] Move project to webapp using Django *currently in progress* - will remove ASCII graphics probably
