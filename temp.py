@@ -35,19 +35,15 @@
 
 print(
 """
-                   ____,wggggMMMM0MM@@@@@@@MMMMMM0Mgggyy,____
-            __wmM#$$g#@MM@""`                    `""MMMMMMMMMMgy__
-          y0@OwDMMMMMMM                               ^QMMMMMMMMMM0g
-          #@g2$0MMMMMf                                 jMNEMMMMMMMM0
-           "90#MMMMMMMg                             _jMM#0MMMMMMMM'
-                `""9MMMMMm,__                 __,yM$ZW0MM@M""`
-                           ```^~       __ygMMMM"^^`
-                                  _wmM$MME
-                               jgQ#j&MMMMMM0Am,
-                               9MM#0MMMMMMMMM0M
-                                    ``````
-
-                                  _,wawyywy_
-                                MZ04WMMMNMMMM0
-                                 "9NMMMMMM@M"`
+       ,      ,
+      /(.-""-.)\ 
+  |\  \/      \/  /|
+  | \ / =.  .= \ / |
+  \( \   o\/o   / )/ 
+   \_, '-/  \-' ,_/
+     /   \__/   \ 
+     \ \__/\__/ /
+   ___\ \|--|/ /___
+ /`    \      /    `\ 
+/       '----'       \ 
                                  """)

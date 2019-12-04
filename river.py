@@ -1,6 +1,8 @@
 import dice
 import moving
 import city
+import gascii
+import commands
 
 
 def cave_wolf_encounter(player):
@@ -113,7 +115,7 @@ def river_cave_01(player):
 
 
 def river_direction(player):
-    decision = input("You are near the river bank. You can go north or east. Or travel somewhere else. (north/east/travel) ")
+    decision = input("You are near the river bank. You can go north or east. Or travel somewhere else. (north/east/travel) ").lower()
     if decision == "north":
         print("You found cave entrance. You can't see too far inside.")
         if player.quest == 1:
@@ -159,6 +161,9 @@ def river_direction(player):
         else:
             print("Please input text according to the bracketed words.")
             river_direction(player)
+    elif decision == "stats":
+        commands.my_stats(player)
+        river_direction(player)
     elif decision == "travel":
         to_travel = moving.where_to_go_river()
         if to_travel == "city":
@@ -166,10 +171,11 @@ def river_direction(player):
         elif to_travel == "stay":
             river_direction(player)
     else:
-        print("Please input text according to the bracketed words.")
+        commands.typo()
         river_direction(player)
 
 
 def river_arrival(player):
     print(f"{player.name} arrived at the river bank.")
+    print(gascii.river_view())
     river_direction(player)
