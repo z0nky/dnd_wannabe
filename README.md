@@ -2,7 +2,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [Dev progress](#updates)
+* [Dev progress](#dev-progress)
 
 ## General info
 This is short text game stylised for the text games from 90s. You wake up in the forest and have small world to explore.
