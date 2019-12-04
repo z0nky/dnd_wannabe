@@ -66,4 +66,3 @@ def starting_path(player):
     else:
         commands.typo()
         starting_path(player)
-
