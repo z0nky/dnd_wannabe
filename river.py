@@ -134,9 +134,6 @@ def river_direction(player):
         elif player.quest == 2:
             print("You have already dealt with troll living in this cave. No need to go there again.")
             river_direction(player)
-        else:
-            print("Please input 'north' or 'east'.")
-            river_direction(player)
     elif decision == "east":
         print("On the small green grassland. You see small birds called Scavengers running around.")
         print(gascii.scav_view())

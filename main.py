@@ -71,7 +71,11 @@ def start_game():
             commands.game_over(player)
     elif location == "river":
         print(f"{player.name} will go to the river.")
-        river.river_arrival(player)
+        if player.life > 0:
+            river.river_arrival(player)
+            if player.quest == 666:
+                print("")
+                exit_the_program()
 
 
 if __name__ == "__main__":
