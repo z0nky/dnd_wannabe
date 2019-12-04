@@ -55,6 +55,7 @@ def start_loc_view():
     /|\/|\/|\ /|\   |[]| [] |   /|\/|\ /|\/|\/|\ /|\/|\ \n
     """
 
+
 def city_view():
     return """
                                                                |>>>
@@ -333,6 +334,3 @@ def troll_view():
                   /        `-.            _,.-'`
                               `-.____,.-'` \n
     """
-
-
-# print(troll_view())
